@@ -23,6 +23,7 @@ int main()
     cout << "the average is " << sum / (float)n << endl;
     cout << "the maximum is " << max << endl;
     cout << "the minimum is " << min << endl;
+    
     system("pause");
     return 0;
 }

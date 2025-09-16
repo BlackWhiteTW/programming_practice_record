@@ -14,4 +14,7 @@ int main()
             printf( "%d" , i%10 );
         printf( "\n" );
     }
+    
+    system("pause");
+    return 0;
 }

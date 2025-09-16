@@ -22,6 +22,7 @@ int main()
     printf("the average is %f\n", sum / (float)n);
     printf("the maximum is %d\n", max);
     printf("the minimum is %d\n", min);
+    
     system("pause");
     return 0;
 }

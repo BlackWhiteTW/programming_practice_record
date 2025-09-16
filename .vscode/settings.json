@@ -98,7 +98,8 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "stdio.h": "c",
-        "Wrong Subtraction.C": "cpp"
+        "Wrong Subtraction.C": "cpp",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
 }

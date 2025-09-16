@@ -10,6 +10,7 @@ int main()
             cout << j << "*" << i << "=" << left << setw(2) << i * j << " ";
         cout << endl;
     }
+    
     system("pause");
     return 0; 
 }

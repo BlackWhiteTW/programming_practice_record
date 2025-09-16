@@ -15,4 +15,7 @@ int main()
             cout << i % 10;
         cout << endl;
     }
+    
+    system("pause");
+    return 0;
 }
