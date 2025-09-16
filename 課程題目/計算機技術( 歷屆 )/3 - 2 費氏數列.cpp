@@ -2,23 +2,26 @@
 
 using namespace std;
 
-int n = 0;
-
-void array(int a , int b , int c)
-{
-    if ( a > n ) 
-        return;
-    cout << c << ", ";
-    if ( c == 0 )
-        array(a + 1 , b , 1);
-    else
-        array(a + 1 , c , b + c);
-}
 int main()
 {
+    int n = 0 , a = 0 , b = 0 , c = 0;
     cout << "Please input a number:";
     cin >> n;
-    array(1 , 0 , 0);
+    for ( int i = 1 ; i <= n ; i++ )
+    {
+        if ( i == n )
+            cout << b << endl;
+        else
+            cout << b << ", ";
+        if ( b == 0 )
+            b++;
+        else
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
     
     system("pause");
     return 0;
