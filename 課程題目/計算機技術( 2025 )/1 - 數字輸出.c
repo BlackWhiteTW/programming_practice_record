@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -39,7 +38,4 @@ int main()
                 break;
         }
     }
-
-    system("pause");
-    return 0;
 }

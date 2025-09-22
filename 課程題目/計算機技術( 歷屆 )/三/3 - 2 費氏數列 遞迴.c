@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int n = 0;
 
@@ -22,7 +21,4 @@ int main()
     printf("Please input a number:");
     scanf("%d", &n);
     fes(1 , 0 , 0);
-    
-    system("pause");
-    return 0;
 }

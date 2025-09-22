@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -27,7 +26,4 @@ int main()
         if ( again >= 'A' && again <= 'Z' )
             again += 'a' - 'A';
     }
-
-    system("pause");
-    return 0;
 }

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int n;
 long long ans = 0;
@@ -27,7 +26,4 @@ int main()
     int a[4] = {0};
     dfs(0, 0, 0, a);
     printf("Total is %lld.\n", ans);
-
-    system("pause");
-    return 0;
 }

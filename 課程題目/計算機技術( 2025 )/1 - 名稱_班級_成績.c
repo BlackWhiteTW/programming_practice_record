@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -23,7 +22,4 @@ int main()
     printf("|-------------------------------------------|\n");
     printf("|%-10s|%-10c|%6d|%6d|%7.2f|\n", s , c , a , b , (a+b)/2.0 );
     printf("|-------------------------------------------|\n");
-
-    system("pause");
-    return 0;
 }

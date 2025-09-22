@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -16,7 +15,4 @@ int main()
                 ans += e - s + 1;
         }
     printf("Total is %lld.\n", ans);
-
-    system("pause");
-    return 0;
 }

@@ -2,39 +2,74 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build C (UTF-8)",
             "type": "shell",
-            "command": "g++",
+            "command": "gcc",
             "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileBasenameNoExtension}.exe"
-            ],
-            "group": "build"
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe 建置使用中檔案",
-            "command": "C:\\MinGW\\bin\\g++.exe",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
+                "-O2",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "shell": { "executable": "C:\\Windows\\System32\\cmd.exe", "args": ["/d", "/c"] }
             },
-            "problemMatcher": [
-                "$gcc"
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build C++ (UTF-8)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-O2",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "options": {
+                "shell": { "executable": "C:\\Windows\\System32\\cmd.exe", "args": ["/d", "/c"] }
             },
-            "detail": "偵錯工具產生的工作。"
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build C (Big5/CP950)",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-O2",
+                "-finput-charset=CP950",
+                "-fexec-charset=CP950",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "shell": { "executable": "C:\\Windows\\System32\\cmd.exe", "args": ["/d", "/c"] }
+            },
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Run (UTF-8 console)",
+            "type": "shell",
+            "command": "chcp 65001 >NUL & \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+            "options": {
+                "shell": { "executable": "C:\\Windows\\System32\\cmd.exe", "args": ["/d", "/c"] }
+            }
+        },
+        {
+            "label": "Run (Big5 console)",
+            "type": "shell",
+            "command": "chcp 950 >NUL & \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+            "options": {
+                "shell": { "executable": "C:\\Windows\\System32\\cmd.exe", "args": ["/d", "/c"] }
+            }
         }
     ]
 }
