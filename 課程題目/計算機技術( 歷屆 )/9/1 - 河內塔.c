@@ -4,9 +4,9 @@ int tap=0;
 
 void hanoi(int n , char A, char B, char C)
 {
-    if(n = 1)
+    if(n == 1)
     {
-        printf("%c -> %c\n", A, C);
+        printf("ring %d: %c => %c\n", tap, A, C);
         tap++;
     }
     else
@@ -20,10 +20,11 @@ void hanoi(int n , char A, char B, char C)
 int main()
 {
     int n;
+    printf("請輸入A柱中的環個數:\n");
     scanf("%d", &n);
     hanoi(n, 'A', 'B', 'C');
-    
-    printf( "%d\n", tap ); 
+
+    printf("共需 %d 個步驟\n", tap);
 
     return 0;
 
