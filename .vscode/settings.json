@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "main,py": "python",
         "stdlib.h": "c",
         "iostream": "cpp",
         "ostream": "cpp",
@@ -9,7 +10,9 @@
         "unordered_set": "cpp",
         "string_view": "cpp",
         "iomanip": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "chrono": "c",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "terminal.integrated.profiles.windows": {
