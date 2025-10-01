@@ -22,9 +22,5 @@ int main()
     int n;
     scanf("%d", &n);
     hanoi(n, 'A', 'B', 'C');
-    
     printf( "%d\n", tap ); 
-
-    return 0;
-
 }

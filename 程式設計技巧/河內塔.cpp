@@ -24,6 +24,4 @@ int main() {
     cin >> n;
     hanoi(n, 'A', 'B', 'C');
     cout << tap << endl;
-
-    return 0;
 }
