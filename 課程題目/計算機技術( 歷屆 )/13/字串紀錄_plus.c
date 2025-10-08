@@ -5,10 +5,10 @@
 int main()
 {
     FILE *fptr;
-    char read_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t3.txt";
-    char write_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t4.txt";
+    char read_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\13\\t5.txt";
+    char write_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\13\\t6.txt";
     char word[100][20] , str[10000] , temp[21];
-    int word_count[100] = {0};
+    int word_count[100] = {0} , t = 0;
 
     fptr = fopen( read_file_file, "r" );
     while ( fgets( str , 10000 , fptr ) != NULL )
@@ -17,6 +17,10 @@ int main()
         for ( int i = 0; str[i] != '\0'; i++ )
         {
             if ( str[i] >= 'A' && str[i] <= 'Z' )
+                str[i] = str[i]  - 'A' + 'a';
+            if ( str[i] == ' ' || str[i] == ',' || str[i] == '.' )
+                t = 1;
+            if ( t == 0 )
                 strncat(temp, &str[i], 1);
             else
             {
@@ -39,15 +43,22 @@ int main()
                 }
                 strcpy(temp, "");
             }
+            t = 0;
         }
     }
     fclose( fptr );
 
     fptr = fopen( write_file_file , "w" );
-    for ( int i = 0 ; i < 99 ; i++ )
+    for ( int i = 0 ; i < 26 ; i++ )
     {
-        if ( word_count[i] != 0 )
-            fprintf(fptr, "%s: %d\n", word[i], word_count[i]);
+        for ( int j = 0 ; j < 100 ; j++ )
+        {
+            if ( word[j][0] - 'a' == i )
+            {
+                if ( word_count[j] != 0 )
+                    fprintf(fptr, "%s: %d\n", word[j], word_count[j]);
+            }
+        }
     }
     fclose(fptr);
 }
