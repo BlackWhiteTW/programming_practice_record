@@ -5,15 +5,13 @@ int main()
 {
     FILE *fptr;
     char str[10000];
-    char read_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t1.txt";
-    char write_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t2.txt";
-
-    fptr = fopen( read_file_file, "r" );
+    char read_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t1.txt";
+    char write_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t2.txt";
     int aeiou[5] = {0};
 
-    while ( fgets( str , 10000 , fptr ) != NULL )
+    fptr = fopen( read_file_file , "r" );
+    while( fgets( str , 10000 , fptr ) != NULL )
     {
-        printf("%s", str);
         for ( int i = 0; str[i] != '\0'; i++ ) {
             if ( str[i] >= 'a' && str[i] <= 'z' )
                 str[i] = str[i] - 'a' + 'A';

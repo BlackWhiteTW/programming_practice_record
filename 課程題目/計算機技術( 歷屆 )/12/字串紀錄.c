@@ -5,15 +5,14 @@
 int main()
 {
     FILE *fptr;
-    char read_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t3.txt";
-    char write_file_file[] = "c:\\Users\\91314\\Documents\\彰師 程式設計\\課程題目\\計算機技術( 歷屆 )\\12\\t4.txt";
+    char read_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t3.txt";
+    char write_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t4.txt";
     char word[100][20] , str[10000] , temp[21];
     int word_count[100] = {0};
 
     fptr = fopen( read_file_file, "r" );
     while ( fgets( str , 10000 , fptr ) != NULL )
     {
-        printf("%s", str);
         for ( int i = 0; str[i] != '\0'; i++ )
         {
             if ( str[i] >= 'A' && str[i] <= 'Z' )
