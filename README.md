@@ -11,7 +11,6 @@
 
 ## 檔案說明
 - `.vscode`: C++ 編譯用 需額外搭配別的東西 有機會再補
-- `codeforces( C )/`：Codeforces 題目程式 ( C 語言版本 ) ( 因為找不到分類 所以停了 )
 - `codeforces( C++ )/`：Codeforces 題目程式 ( C++ 版本 )
 - `zero_judge/`：ZeroJudge 題目程式 底下有和 `zero judge` 一樣的分類方式w 目前已停止了 我的python寫不過那些要求......
 - `README.md`：本說明文件
