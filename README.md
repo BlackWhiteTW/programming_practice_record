@@ -34,3 +34,8 @@
 - [Code_Forces](https://codeforces.com/problemset)
 - 課程題目 (沒特定獲取方式 都是別人描述或給檔案的)
 - 程式設計技巧 (題目源自同名書籍)
+
+## 課程題目
+- 目前都是彰師資訊工程學系的 如果之後有其他系或學校的話 會再做分類
+- 歡迎把題目丟給我 丟的方式使用 [github](https://github.com/BlackWhiteTW/programming_practice_record/issues) 建立新問題並附加檔案即可 也可以透過傳送 [email](mkbk0322@gmail.com) 傳送 有時間我就會完成並更新
+- 會想蒐集題目只是因為想多練習而已 別因此攻擊我 我寫得很爛 沒什麼想抄的<br><h5>求放過 我只是個想學習且路邊隨處可見的新手而已</h5>
