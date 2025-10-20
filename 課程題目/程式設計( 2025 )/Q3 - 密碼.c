@@ -15,7 +15,7 @@ int main()
             scanf("%s", instr);
             int a = 0 , b = 0 ;
             if ( strlen(instr) != 4 || instr[0] == '-' )
-                printf("ERROR\n");
+                printf("Invalid input!\n");
             else
             {
                 for ( int j = 0 ; j < 4 ; j++ )
@@ -29,7 +29,7 @@ int main()
                 } 
                 if ( a == 4 )
                 {
-                    printf("正確\n");
+                    printf("Success!!\n");
                     break;
                 }
                 else

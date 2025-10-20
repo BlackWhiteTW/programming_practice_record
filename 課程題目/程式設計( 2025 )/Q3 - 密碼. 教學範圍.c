@@ -13,7 +13,7 @@ int main()
             int inint = 0 , a = 0 , b = 0 , idx = 0 , instr[4] = {0};
             scanf("%d", &inint);
             if ( inint < 1000 || inint > 9999 )
-                printf("ERROR\n");
+                printf("Invalid input!\n");
             else
             {
                 for ( int temp = inint ; temp > 0 ; temp /= 10 , idx++ )
@@ -29,7 +29,7 @@ int main()
                 }
                 if ( a == 4 )
                 {
-                    printf("正確\n");
+                    printf("Success!!\n");
                     break;
                 }
                 else

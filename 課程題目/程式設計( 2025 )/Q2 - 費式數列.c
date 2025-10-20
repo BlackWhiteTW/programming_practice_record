@@ -13,7 +13,11 @@ void dfs( int d, int a, int b )
 
 int main()
 {
-    int n;
+    int n , m;
     scanf("%d", &n);
-    dfs(n , 0 , 1);
+    for ( int i = 0 ; i < n ; i++ )
+    {
+        scanf("%d", &m);
+        dfs(m , 0 , 1);
+    }
 }
