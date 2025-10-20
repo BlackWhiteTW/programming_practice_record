@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int prime_factorization(int n)
+int pf(int n)
 {
     if ( n == 2 || n == 3 )
         return 1;
@@ -22,7 +22,7 @@ int main()
     int tmp = 0;
     for ( long long i = 2 ; i <= n ; i++ )
     {
-        if ( prime_factorization(i) )
+        if ( pf(i) )
         {
             if ( n % i == 0 )
             {
@@ -31,7 +31,7 @@ int main()
                 else
                     printf("* %lld " , i );
                 n = n / i;
-                i -= 1;
+                i --;
                 tmp++;
                 if ( n == 1 )
                 {

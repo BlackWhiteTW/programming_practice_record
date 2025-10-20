@@ -1,12 +1,18 @@
 #include <stdio.h>
 
-int gcd(int a, int b)
+void swap( int *a, int *b )
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int gcd( int a, int b )
 {
     while (b)
     {
-        int t = a % b;
-        a = b;
-        b = t;
+        a %= b;
+        swap(&a, &b);
     }
     return a;
 }
@@ -17,38 +23,32 @@ void sort_fraction(int (*ptr)[2], int n)
         for (int j = i + 1; j < n; ++j)
             if ( (long long)ptr[i][0] * ptr[j][1] > (long long)ptr[j][0] * ptr[i][1] )
             {
-                int tn = ptr[i][0], td = ptr[i][1];
-                ptr[i][0] = ptr[j][0];
-                ptr[i][1] = ptr[j][1];
-                ptr[j][0] = tn;
-                ptr[j][1] = td;
+                swap(&ptr[i][0], &ptr[j][0]);
+                swap(&ptr[i][1], &ptr[j][1]);
             }
 }
 
 int main()
 {
     int n , m = 0 , all = 0;
-    printf("Please input a number: ");
-    if (scanf("%d", &n) != 1 || n < 1) return 0;
-
+    printf( "Please input a number: " );
+    if ( scanf( "%d" , &n ) != 1 || n < 1 )
+        return 0;
     int num[ n * (n + 1) / 2 ][2];
 
-    // 0/1
     num[m][0] = 0;
     num[m][1] = 1;
-    m++;
-    // 1/1
     num[m][0] = 1;
     num[m][1] = 1;
-    m++;
+    m += 2;
 
-    for (int b = 1; b <= n; ++b) {
-        for (int a = 1; a <= b; ++a) {
-            int g = gcd(a, b);
-            int na = a / g, nb = b / g;
-            int dup = 0;
-            num[m][0] = na;
-            num[m][1] = nb;
+    for ( int b = 1 ; b <= n ; ++b )
+    {
+        for ( int a = 1 ; a <= b ; ++a )
+        {
+            int g = gcd( a, b );
+            num[m][0] = a / g;
+            num[m][1] = b / g;
             m++;
         }
     }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main()
 {
@@ -13,8 +14,7 @@ int main()
     while( fgets( str , 10000 , fptr ) != NULL )
     {
         for ( int i = 0; str[i] != '\0'; i++ ) {
-            if ( str[i] >= 'a' && str[i] <= 'z' )
-                str[i] = str[i] - 'a' + 'A';
+            str[i] = toupper( str[i] );
             if ( str[i] == 'A' )
                 aeiou[0]++;
             else if ( str[i] == 'E' )

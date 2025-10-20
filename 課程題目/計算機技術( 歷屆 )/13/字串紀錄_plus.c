@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 // 將讀到的字串做判斷與處理 檢查是否已儲存過 沒就添加 有就增加次數
 void process_word(char temp[21], char word[100][20], int word_count[100])
@@ -24,7 +25,6 @@ void process_word(char temp[21], char word[100][20], int word_count[100])
 
 int main()
 {
-    // 初始化的設定
     FILE *fptr;
     char read_file_file[] = "課程題目\\計算機技術( 歷屆 )\\13\\t5.txt";
     char write_file_file[] = "課程題目\\計算機技術( 歷屆 )\\13\\t6.txt";
@@ -33,14 +33,12 @@ int main()
     for( int i=0 ; i < 100 ; i++ )
         word[i][0] = '\0';
 
-    // 讀取檔案並處理字串
     fptr = fopen( read_file_file , "r" );
     while( fgets( str , 10000 , fptr ) != NULL )
     {
         for ( int i = 0 ; str[i] != '\0' ; i++ )
         {
-            if ( str[i] >= 'A' && str[i] <= 'Z' )
-                str[i] = str[i]  - 'A' + 'a';
+            str[i] = tolower( str[i] );
             if ( str[i] == ' ' || str[i] == ',' || str[i] == '.' || str[i] == '\n' || str[i] == '\r' )
             {
                 process_word( temp , word , word_count );
@@ -49,7 +47,6 @@ int main()
             else
                 strncat( temp , &str[i], 1);
         }
-        // 處理行尾的最後一個單字
         process_word( temp , word , word_count );
     }
     fclose( fptr );
@@ -57,7 +54,6 @@ int main()
     while( word_idx < 100 && word[word_idx][0] != '\0' )
         word_idx++;
 
-    // 使用基礎的氣泡排序法對單字進行排序
     for ( int i = 0 ; i < word_idx - 1 ; i++ )
         for ( int j = 0 ; j < word_idx - i - 1 ; j++ )
             if ( strcmp( word[j] , word[j + 1] ) > 0 )
@@ -72,7 +68,6 @@ int main()
                 word_count[j] -= word_count[j + 1];
             }
 
-    // 寫入檔案
     fptr = fopen( write_file_file , "w" );
     for ( int i = 0 ; i < word_idx ; i++ )
         fprintf( fptr , "%s: %d\n" , word[i] , word_count[i] );
