@@ -13,9 +13,10 @@ void move_back_arr ( int num[] , int *size , int times )
 {
     for ( int i = 0 ; i < times ; i++ )
     {
-        for ( int i = (*size)++ ; i > 0 ; i-- )
-                num[i] = num[i - 1];
-        num[i] = 0;
+        for ( int j = *size ; j > 0 ; j-- )
+                num[j] = num[j - 1];
+        num[0] = 0;
+        (*size)++;
     }
 }
 
