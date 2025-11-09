@@ -10,17 +10,17 @@ long long int pow_int ( int b , int e )
 
 void d_to_b ( long long int dec_num , int binary_arr[] , int *size )
 {
-        binary_arr[*size] = dec_num % 2;
-        (*size)++;
-        if ( dec_num / 2 != 0 )
-            d_to_b ( dec_num / 2 , binary_arr , size );
-        else
-        {
-            for ( int j = *size - 1 ; j >= 0 ; j-- )
-                printf("%d", binary_arr[j]);
-            printf("\n");
-            return;
-        }
+    binary_arr[*size] = dec_num % 2;
+    (*size)++;
+    if ( dec_num / 2 != 0 )
+        d_to_b ( dec_num / 2 , binary_arr , size );
+    else
+    {
+        for ( int j = *size - 1 ; j >= 0 ; j-- )
+            printf("%d", binary_arr[j]);
+        printf("\n");
+        return;
+    }
 }
 
 void b_to_d ( int binary_arr[] , long long int *dec_num , int size , int index )
