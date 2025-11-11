@@ -32,6 +32,7 @@ int main()
     int t;
     scanf("%d", &t);
     getchar();
+    
     for (int i = 0; i < t; i++)
     {
         int a[512] = {0} , b[512] = {0} , c[1024] = {0};

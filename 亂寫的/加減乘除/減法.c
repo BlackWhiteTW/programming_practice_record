@@ -29,7 +29,7 @@ void sub_arrays( int a[] , int b[] , int c[] )
     {
         if ( a[i] < b[i] )
         {
-            a[i] += 10;
+            a[i]+=10;
             a[i-1]--;
         }
         c[i] = a[i] - b[i];
@@ -66,12 +66,13 @@ int main()
         }
         
         if ( regative )
+        {
             sub_arrays( b , a , c );
+            printf("-");
+        }
         else
             sub_arrays( a , b , c );
 
-        if ( regative )
-            printf("-");
         for ( int i = 0 ; i < max_len ; i++ )
         {
             if ( zero && c[i] == 0 )
