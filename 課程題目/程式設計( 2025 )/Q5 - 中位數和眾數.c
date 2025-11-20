@@ -4,16 +4,14 @@
 void input_number( int a[] , int b[] , int *max_index , int number )
 {
     for ( int i = 0 ; i < *max_index ; i++ )
-    {
         if ( a[i] == number )
         {
             b[i] ++;
             return;
         }
-    }
-    a[ *max_index ] = number;
-    b[ *max_index ] ++;
-    (*max_index) ++;
+    a[*max_index] = number;
+    b[*max_index] = 1;
+    ++(*max_index);
     return;
 }
 
@@ -21,20 +19,16 @@ void input_number( int a[] , int b[] , int *max_index , int number )
 void sort_two_array( int a[] , int b[] , int len )
 {
     for ( int i = 0 ; i < len ; i++ )
-    {
         for ( int j = i + 1 ; j < len ; j++ )
-        {
             if ( a[i] > a[j] )
             {
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-                temp = b[i];
-                b[i] = b[j];
-                b[j] = temp;
+                a[i] += a[j];
+                a[j] = a[i] - a[j];
+                a[i] -= a[j];
+                b[i] += b[j];
+                b[j] = b[i] - b[j];
+                b[i] -= b[j];
             }
-        }
-    }
 }
 
 // 中位數
@@ -42,7 +36,6 @@ void median( int a[] , int b[] , int len , int number )
 {
     int index = 0;
     if ( len %2 != 0 )
-    {
         for ( int i = 0 ; i < len ; i++ )
         {
             index += b[i];
@@ -52,7 +45,6 @@ void median( int a[] , int b[] , int len , int number )
                 break;
             }
         }
-    }
     else
     {
         float tmp = 0;
@@ -62,16 +54,10 @@ void median( int a[] , int b[] , int len , int number )
             if ( index >= ( number / 2 ) )
             {
                 tmp += ( float )a[i];
-                break;
-            }
-        }
-        index = 0;
-        for ( int i = 0 ; i < len ; i++ )
-        {
-            index += b[i];
-            if ( index >= ( number / 2 ) + 1 )
-            {
-                tmp += ( float )a[i];
+                if ( index >= ( number / 2 ) + 1 )
+                    tmp += ( float )a[i];
+                else
+                    tmp += ( float )a[i+1];
                 break;
             }
         }

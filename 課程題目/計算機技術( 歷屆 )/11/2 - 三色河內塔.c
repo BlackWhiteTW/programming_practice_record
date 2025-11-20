@@ -14,19 +14,19 @@ void hanoi_std( int n, char f, char a, char t )
     hanoi_std( n - 1 , a , f , t );
 }
 
-// 奇偶分散：奇數到 o，偶數到 e
-void distribute( int n , char f , char o , char e )
+// 分散：mod 3 = 1 到 A , 2 到 B , 0 到 C
+void distribute( int n , char f , char roll[] , int roll_len )
 {
     if ( n == 0 ) 
         return;
 
     // 目的
-    char t = ( n % 2 ? o : e );
+    char t = roll[ n % roll_len ];
 
     // 這層正確 則處理上一層 這層結束
     if ( f == t )
     {
-        distribute( n - 1 , f , o , e );
+        distribute( n - 1 , f , roll , roll_len );
         return;
     }
 
@@ -36,7 +36,7 @@ void distribute( int n , char f , char o , char e )
     hanoi_std( n - 1 , f , t , a );
     printf( "%d : %c -> %c\n" , n , f , t );
     steps++;
-    distribute( n - 1 , a , o , e );
+    distribute( n - 1 , a , roll , roll_len );
 }
 
 int main()
@@ -44,7 +44,13 @@ int main()
     int n;
     if ( scanf( "%d" , &n ) != 1 || n <= 0 )
         return 0;
-    distribute( n , 'A' , 'B' , 'C' );
+    
+    // 放到哪幾個柱子
+    char roll[] = { 'A' , 'B' , 'C'};
+
+    // 有 n 個盤子 從 A 分散至 roll_len 個柱子
+    distribute( n , 'A' , roll , 3 );
+
     printf( "Total steps = %lld\n" , steps );
     return 0;
 }
