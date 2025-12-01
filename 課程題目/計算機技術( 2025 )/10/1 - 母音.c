@@ -6,8 +6,8 @@ int main()
 {
     FILE *fptr;
     char c;
-    char read_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t1.txt";
-    char write_file_file[] = "課程題目\\計算機技術( 歷屆 )\\12\\t2.txt";
+    char read_file_file[] = "課程題目\\計算機技術( 2025 )\\10\\t1.txt";
+    char write_file_file[] = "課程題目\\計算機技術( 2025 )\\10\\t2.txt";
     int aeiou[5] = {0};
 
     fptr = fopen( read_file_file , "r" );
@@ -28,6 +28,6 @@ int main()
     fclose( fptr );
 
     fptr = fopen( write_file_file , "w" );
-    fprintf( fptr, "A E I O U\n%d %d %d %d %d" , aeiou[0] , aeiou[1] , aeiou[2] , aeiou[3] , aeiou[4] );
+    fprintf( fptr , "A E I O U\n%d %d %d %d %d" , aeiou[0] , aeiou[1] , aeiou[2] , aeiou[3] , aeiou[4] );
     fclose( fptr );
 }
