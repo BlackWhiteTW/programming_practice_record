@@ -8,17 +8,29 @@ int main()
         scanf ( "%d %d" , &a , &b );
         if ( a == 0 && b == 0 )
             return 0;
-        int arr_a[a] , arr_b[b];
-        for ( int i = 0 ; i < a ; i++ )
+
+        int arr_a[a+1] , arr_b[b+1] , arr_c[a+1][b+1] , count = 0;
+        for ( int i = 1 ; i <= a ; i++ )
             scanf ( "%d" , &arr_a[i] );
-        for ( int j = 0 ; j < b ; j++ )
+        for ( int j = 1 ; j <= b ; j++ )
             scanf ( "%d" , &arr_b[j] );
-        
-        int index_a = 0 , index_b = 0 , count = 0 , min_len = ( a < b ) ? a : b , flag_a , flag_b;
-        for ( int i = 0 ; i < min_len ; i = ( index_a < index_b ) ? index_b : index_a )
-        {
-        }
-        printf( "Twin Towers #%d\n" , t++ );
-        printf( "Number of Tiles : %d\n\n" , count );
+
+        for ( int i = 0 ; i <= a ; i++ )
+            for ( int j = 0 ; j <= b ; j++ )
+                arr_c[i][j] = 0;
+
+        for ( int i = 1 ; i <= a ; i++ )
+            for ( int j = 1 ; j <= b ; j++ )
+            {
+                if ( arr_a[i] == arr_b[j] )
+                {
+                    arr_c[i][j] = arr_c[i-1][j-1] + 1;
+                }
+                else
+                    arr_c[i][j] = ( arr_c[i-1][j] > arr_c[i][j-1] ) ? arr_c[i-1][j] : arr_c[i][j-1];
+            }
+
+        printf ( "Twin Towers #%d\n" , t++ );
+        printf ( "Number of Tiles : %d\n\n" , arr_c[a][b] );
     }
 }
