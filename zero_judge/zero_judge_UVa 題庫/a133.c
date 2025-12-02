@@ -23,9 +23,7 @@ int main()
             for ( int j = 1 ; j <= b ; j++ )
             {
                 if ( arr_a[i] == arr_b[j] )
-                {
                     arr_c[i][j] = arr_c[i-1][j-1] + 1;
-                }
                 else
                     arr_c[i][j] = ( arr_c[i-1][j] > arr_c[i][j-1] ) ? arr_c[i-1][j] : arr_c[i][j-1];
             }
