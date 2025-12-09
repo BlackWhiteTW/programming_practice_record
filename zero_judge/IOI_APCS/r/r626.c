@@ -3,7 +3,7 @@
 
 #define MAX_STATE 5000000
 
-int memo[MAX_STATE];
+int memo[MAX_STATE] , n ;
 
 typedef struct
 {
@@ -14,7 +14,7 @@ typedef struct
 } Node;
 
 // dfs 找出所有可能 (使用 Memoization 優化)
-int dfs( int n , Node array[] )
+int dfs( Node array[] )
 {
     // 計算當前狀態的編號 ( 0 ~ 12 )
     int state = 0;
@@ -32,25 +32,22 @@ int dfs( int n , Node array[] )
 
     for ( int i = 0 ; i < n - 1 ; i++ )
     {
-        if ( array[i].index >= array[i].len ) continue;
-        
+        if ( array[i].index >= array[i].len )
+            continue;
+
         for ( int j = i + 1 ; j < n ; j++ )
         {
-            if ( array[j].index >= array[j].len ) continue;
+            if ( array[j].index >= array[j].len )
+                continue;
 
             if ( array[i].ch[array[i].index] == array[j].ch[array[j].index] )
             {
                 int gain = array[i].number[array[i].index] + array[j].number[array[j].index];
-                
-                array[i].index++;
-                array[j].index++;
-                
-                int temp = gain + dfs( n , array );
+                array[i].index++ , array[j].index++;
+                int temp = gain + dfs( array );
                 if ( temp > max_gain )
                     max_gain = temp;
-                
-                array[i].index--;
-                array[j].index--;
+                array[i].index-- , array[j].index--;
             }
         }
     }
@@ -62,7 +59,7 @@ int main()
     // 初始化 memo 陣列
     memset(memo, -1, sizeof(memo));
 
-    int n , max_len = 0;
+    int max_len = 0;
     scanf( "%d" , &n );
     Node array[n];
     memset(array, 0, sizeof(array));
@@ -71,9 +68,7 @@ int main()
         scanf( "%d" , &array[i].len );
         for ( int j = 0 ; j < array[i].len ; j++ )
             scanf( " %c %d" , &array[i].ch[j] , &array[i].number[j] );
-        if ( array[i].len > max_len )
-            max_len = array[i].len;
     }
-    int ans = dfs( n , array );
+    int ans = dfs( array );
     printf( "%d\n" , ans );
 }
