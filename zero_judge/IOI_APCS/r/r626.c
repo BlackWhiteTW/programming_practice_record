@@ -13,21 +13,20 @@ typedef struct
     int len;
 } Node;
 
-/*
-dfs 找出所有可能 (使用 Memoization 優化)
-*/
+// dfs 找出所有可能 (使用 Memoization 優化)
 int dfs( int n , Node array[] )
 {
-    // 計算當前狀態的 Hash 值 (Base 13)
+    // 計算當前狀態的編號 ( 0 ~ 12 )
     int state = 0;
     int multiplier = 1;
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++)
+    {
         state += array[i].index * multiplier;
         multiplier *= 13;
     }
 
-    // 如果此狀態已經計算過，直接回傳
-    if(memo[state] != -1) return memo[state];
+    if(memo[state] != -1)
+        return memo[state];
 
     int max_gain = 0;
 
