@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-// 定義一個結構儲存 a 和 a的位置
+// 定義一個結構儲存 a 和 a 的位置
 typedef struct
 {
     int a;
