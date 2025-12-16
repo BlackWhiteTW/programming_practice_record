@@ -1,67 +1,32 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<math.h>
 
 int main()
 {
-    int n;
+    int n , t = 1 ;
     scanf( "%d" , &n );
-    int *array , *array_a , *array_b;
-    array = ( int* )calloc( n , sizeof( int ) );
-    array_a = ( int* )calloc( n , sizeof( int ) );
-    array_b = ( int* )calloc( n , sizeof( int ) );
+    int array[n];
     for ( int i = 0 ; i < n ; i++ )
         scanf( "%d" , &array[i] );
-    int a_index = n - 1 , b_index = 0;
-    int t = 0 , stack_index = 0 , point = 0;
-    for ( int i = 0 ; i < n ; i++ )
-        array_a[i] = array[n - 1 - i];
-
-    for ( int i = 0 ; i < n - 1 ; i++ )
-        for ( int j = i + 1 ; j < n ; j++ )
-            if ( array[i] > array[j] )
-            {
-                array[i] += array[j];
-                array[j] = array[i] - array[j];
-                array[i] -= array[j];
-            }
-
-    while ( stack_index < n )
+    int num_index = 0 , index = 0 , count = 0 ;
+    int a , b;
+    while ( count < n )
     {
-        int f = array[stack_index];
-        for ( int i = 0 ; i < n ; i++ )
-            if ( f == array_a[i] )
-                point = 1;
+        count++;
+        num_index = 0;
+        while ( array[num_index] != count )
+            num_index++;
 
-        if ( point )
-        {
-            while ( array_a[a_index] != f )
-            {
-                array_b[b_index++] = array_a[a_index--];
-                array_a[a_index + 1] = 0;
-                t++;
-            }
-            for ( int i = a_index ; i < n ; i++ )
-                array_a[i] = array_a[i + 1];
-            array_a[n-1] = 0;
-        }
+        if ( index > num_index )
+            a = index , b = num_index ;
         else
-        {
-            while ( array_b[b_index] != f )
-            {
-                array_a[a_index++] = array_b[b_index--];
-                array_b[b_index + 1] = 0;
-                t++;
-            }
-            for ( int i = b_index ; i < n ; i++ )
-                array_b[i] = array_b[i + 1];
-            array_b[n-1] = 0;
-        }
-        stack_index++;
-        point = 0;
+            a = num_index , b = index ;
+        for ( int i = b + 1 ; i < a ; i++ )
+            if ( array[i] == 0 )
+                t--;
+        t += abs( index - num_index );
+        index = num_index ;
+        array[num_index] = 0 ;
     }
-    free( array );
-    free( array_a );
-    free( array_b );
-
-    printf( "%d\n" , t );
+    printf( "%d" , t );
 }
