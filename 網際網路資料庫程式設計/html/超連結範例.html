@@ -1,50 +1,56 @@
 <!-- 宣告這是HTML5文件 -->
-<!DOCTYPE html>
+<!doctype html>
 <!-- 設定文件的語言為英文 -->
 <html lang="en">
+  <!-- 文件的頭部 -->
 
-<!-- 文件的頭部 -->
-<head>
-<!-- 設定文件的標題 -->
-<title></title>
-<!-- 設定文件的字元編碼為UTF-8 -->
-<meta charset="UTF-8">
-<!-- 設定文件的viewport，讓網頁在不同裝置上有良好的顯示效果，RWD必備設定 -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-img {
-display: block;
-margin: 30px;
-}
-</style>
-</head>
+  <head>
+    <!-- 設定文件的標題 -->
+    <title>超連結範例</title>
+    <!-- 設定文件的字元編碼為UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- 設定文件的viewport，讓網頁在不同裝置上有良好的顯示效果，RWD必備設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<body>
-<a href="#photo2">移至圖片二</a>　　
-<button type="button" onclick="location.href='#photo3'">移至圖片三</button>　　
-<div id="photo1">
-<b>圖片一：</b>
-<img src="https://picsum.photos/200">
-<img src="https://picsum.photos/200">
-<img src="https://picsum.photos/200">
-<img src="https://picsum.photos/200">
-</div>
-<div id="photo2">
-<b>圖片二：</b>
-<img src="https://picsum.photos/300">
-<img src="https://picsum.photos/300">
-<img src="https://picsum.photos/300">
-<img src="https://picsum.photos/300">
-</div>
-<div id="photo3">
-<b>圖片三：</b>
-<img src="https://picsum.photos/400">
-<img src="https://picsum.photos/400">
-<img src="https://picsum.photos/400">
-<img src="https://picsum.photos/400">
-</div>
-</body>
+    <!-- 設定文件的風格 -->
+    <!-- 內部CSS -->
+    <!-- display:block 使圖片垂直排列 -->
+    <!-- 圖片四周都會有 30 像素的外距 -->
+    <style>
+      img {
+        display: block;
+        margin: 30px;
+      }
+    </style>
+  </head>
 
+  <!-- 文件的主體 -->
+
+  <body>
+    <a href="#photo2">移至圖片二</a>　　
+    <button type="button" onclick="location.href = '#photo3'">
+      移至圖片三
+    </button>
+    <div id="photo1">
+      <b>圖片一：</b>
+      <img src="https://picsum.photos/200" />
+      <img src="https://picsum.photos/200" />
+      <img src="https://picsum.photos/200" />
+      <img src="https://picsum.photos/200" />
+    </div>
+    <div id="photo2">
+      <b>圖片二：</b>
+      <img src="https://picsum.photos/300" />
+      <img src="https://picsum.photos/300" />
+      <img src="https://picsum.photos/300" />
+      <img src="https://picsum.photos/300" />
+    </div>
+    <div id="photo3">
+      <b>圖片三：</b>
+      <img src="https://picsum.photos/400" />
+      <img src="https://picsum.photos/400" />
+      <img src="https://picsum.photos/400" />
+      <img src="https://picsum.photos/400" />
+    </div>
+  </body>
 </html>
-
-

@@ -1,0 +1,138 @@
+<style>
+  table tr,
+  table td {
+    border: 1px solid black;
+    text-align: left;
+    font-family: "微軟正黑體";
+  }
+  h3 {
+    font-size: 20px;
+    font-family: "微軟正黑體";
+  }
+  .label-col {
+    width: 100px;
+  }
+  .input-col {
+    width: 500px;
+  }
+  .button-col {
+    width: 600px;
+    text-align: center;
+  }
+</style>
+
+<h3 style="text-align: center">會員基本資料填寫</h3>
+<table>
+  <form name="name" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">姓名：</td>
+      <td class="input-col">
+        <input type="text" name="name" size="15" />
+      </td>
+    </tr>
+  </form>
+  <form name="birthday" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">生日：</td>
+      <td class="input-col">
+        <select name="year" size="1">
+          <option value="60" selected>60</option>
+          <option value="61">61</option>
+          <option value="62">62</option>
+          <option value="63">63</option>
+          <option value="64">64</option></select
+        >年
+        <select name="month" size="1">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        月
+        <select name="day" size="1">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        日
+      </td>
+    </tr>
+  </form>
+  <form name="sex" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">性別：</td>
+      <td class="input-col">
+        <input type="radio" name="sex" value="1" />男
+        <input type="radio" name="sex" value="2" />女
+      </td>
+    </tr>
+  </form>
+  <form name="interest" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">興趣：</td>
+      <td class="input-col">
+        <input type="checkbox" name="interest[]" value="1" />游泳
+        <input type="checkbox" name="interest[]" value="2" />慢跑
+        <input type="checkbox" name="interest[]" value="3" />打網球
+        <input type="checkbox" name="interest[]" value="4" />打籃球
+        <input type="checkbox" name="interest[]" value="5" />爬山
+      </td>
+    </tr>
+  </form>
+  <form name="e_mail" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">E-mail：</td>
+      <td class="input-col">
+        <input type="text" name="e_mail" size="15" />
+      </td>
+    </tr>
+  </form>
+  <form name="image" action="a.php" method="POST" enctype="multipart/form-data">
+    <tr>
+      <td class="label-col">照片上傳：</td>
+      <td class="input-col">
+        <input
+          type="file"
+          id="real-file"
+          style="display: none"
+          onchange="updatePath()"
+        />
+        <input type="text" id="fake-path" readonly size="15" />
+        <input
+          type="button"
+          value="瀏覽..."
+          onclick="document.getElementById('real-file').click()"
+        />
+      </td>
+    </tr>
+  </form>
+  <form name="text" action="a.php" method="POST">
+    <tr>
+      <td class="label-col">自我介紹：</td>
+      <td class="input-col">
+        <textarea name="text" rows="10" cols="40"></textarea>
+      </td>
+    </tr>
+  </form>
+  <form name="check" action="a.php" method="POST">
+    <tr>
+      <td colspan="12" class="button-col">
+        <input type="submit" value="送出資料" />
+      </td>
+    </tr>
+  </form>
+</table>
+
+<script>
+  function updatePath() {
+    var fileInput = document.getElementById("real-file");
+    var pathInput = document.getElementById("fake-path");
+    if (fileInput.files.length > 0) {
+      pathInput.value = fileInput.files[0].name;
+    }
+  }
+</script>

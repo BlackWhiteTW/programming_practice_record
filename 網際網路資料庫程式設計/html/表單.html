@@ -1,0 +1,114 @@
+<style>
+  form {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+  }
+</style>
+
+<form name="MyForm1" action="a.php" method="POST">
+  請輸入帳號：
+  <input type="text" name="user" size="20" maxlength="10" /> <br />
+  請輸入密碼：
+  <input type="password" name="pwd" size="20" value="" />
+</form>
+
+<form name="MyForm1" action="a.php" method="POST">
+  請輸入帳號：
+  <input type="text" name="user" size="20" maxlength="10" /> <br />
+  請輸入密碼：
+  <input type="password" name="pwd" size="20" value="" />
+  <input type="hidden" name="dept_no" value="210" />
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請輸入您的問題：<br />
+  <textarea name="content" rows="10" cols="40">問題：</textarea>
+</form>
+
+<form name="MyForm1" action="a.php" method="POST" target="_blank">
+  請輸入帳號：
+  <input type="text" name="user" size="20" maxlength="10" /> <br />
+  請輸入密碼：
+  <input type="password" name="pwd" size="20" value="" />
+  <input type="hidden" name="dept_no" value="210" />
+  <input
+    type="button"
+    size="20"
+    value="一般按鈕"
+    onclick="javascript: alert('此為一般按鈕');"
+  />
+  <input type="submit" size="20" value="送出資料" />
+  <input type="reset" size="20" value="重設" />
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  <input type="radio" name="sex" value="1" checked />男生
+  <input type="radio" name="sex" value="2" />女生
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  <input type="radio" name="sex" value="1" checked />男生
+  <input type="radio" name="sex" value="2" />女生
+  <br />
+  <input type="radio" name="site" value="1" />台北
+  <input type="radio" name="site" value="2" />台中
+  <input type="radio" name="site" value="3" />高雄
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  <input type="checkbox" name="hobby[]" value="1" checked />游泳
+  <input type="checkbox" name="hobby[]" value="2" />慢跑
+  <input type="checkbox" name="hobby[]" value="3" />打網球
+  <input type="checkbox" name="hobby[]" value="4" />打籃球
+  <input type="checkbox" name="hobby[]" value="5" />爬山
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請選擇系所：
+  <select name="dept_name" size="1">
+    <option value="0" selected>資訊工程學系</option>
+    <option value="1">資訊管理學系</option>
+    <option value="2">電子工程學系</option>
+    <option value="3">工業工程學系</option>
+    <option value="4">商業教育學系</option>
+  </select>
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請選擇系所：
+  <select name="dept_name" size="3">
+    <option value="0" selected>資訊工程學系</option>
+    <option value="1">資訊管理學系</option>
+    <option value="2">電子工程學系</option>
+    <option value="3">工業工程學系</option>
+    <option value="4">商業教育學系</option>
+  </select>
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請選擇系所：
+  <select name="dept_name" size="3" multiple>
+    <option value="0" selected>資訊工程學系</option>
+    <option value="1">資訊管理學系</option>
+    <option value="2">電子工程學系</option>
+    <option value="3">工業工程學系</option>
+    <option value="4">商業教育學系</option>
+  </select>
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請輸入說明：
+  <input type="text" list="comment" />
+  <datalist id="comment">
+    <option value="選項一"></option>
+    <option value="選項二"></option>
+    <option value="選項三"></option>
+  </datalist>
+</form>
+
+<form name="MyForm3" action="a.php" method="POST">
+  請選擇檔案：<br />
+  <input type="file" name="file1" accept="image/*" />
+  <input type="file" name="file2" size="10" />
+</form>

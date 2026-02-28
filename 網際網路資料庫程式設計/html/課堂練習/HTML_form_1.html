@@ -1,0 +1,105 @@
+<link href="post_style.css" rel="stylesheet" type="text/css" />
+
+<style>
+  table {
+    font-size: 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table tr,
+  table td {
+    border: 1px solid black;
+    text-align: left;
+  }
+</style>
+
+<table width="500" height="50">
+  <form name="to" action="a.php" method="POST">
+    <tr>
+      <td class="c_title">公告對象：</td>
+      <td colspan="9" class="c_content">
+        <input type="checkbox" name="to[]" value="1" />教職員
+        <input type="checkbox" name="to[]" value="2" />學生
+        <input type="checkbox" name="to[]" value="3" />學校首頁
+      </td>
+    </tr>
+  </form>
+  <form name="type" action="a.php" method="POST">
+    <tr>
+      <td class="c_title">公告類型：</td>
+      <td colspan="9" class="c_content">
+        <input type="radio" name="type" value="1" />演講
+        <input type="radio" name="type" value="2" />研討會
+        <input type="radio" name="type" value="3" />徵才
+        <input type="radio" name="type" value="4" />招生、進修教育訓練
+        <input type="radio" name="type" value="5" />其他
+      </td>
+    </tr>
+  </form>
+  <form name="title" action="a.php" method="POST">
+    <tr>
+      <td class="c_title">主旨：</td>
+      <td colspan="9" class="c_content">
+        <input type="text" name="title" size="50" />
+      </td>
+    </tr>
+  </form>
+  <form name="date" action="a.php" method="POST">
+    <tr>
+      <td class="c_title">截止日期：</td>
+      <td colspan="9" class="c_content">
+        <select name="year" size="1">
+          <option value="100">100</option>
+          <option value="101" selected>101</option>
+          <option value="102">102</option>
+          <option value="103">103</option>
+          <option value="104">104</option></select
+        >年
+        <select name="month" size="1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7" selected>7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        月
+        <select name="day" size="1">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        日
+      </td>
+    </tr>
+  </form>
+  <form name="content" action="a.php" method="POST">
+    <tr>
+      <td class="c_title">公告內容：</td>
+      <td colspan="9" class="c_content">
+        <textarea
+          name="content"
+          rows="5"
+          cols="40"
+          style="resize: vertical"
+        ></textarea>
+      </td>
+    </tr>
+  </form>
+  <form name="check" action="a.php" method="POST">
+    <tr>
+      <td colspan="10" style="text-align: center">
+        <input type="submit" value="送出公告" class="c_button" />
+        <input type="reset" value="重設表單" class="c_button" />
+      </td>
+    </tr>
+  </form>
+</table>

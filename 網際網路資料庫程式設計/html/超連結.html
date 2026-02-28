@@ -2,59 +2,61 @@
 <h2>href 屬性</h2>
 
 <a href="http://www.ncue.edu.tw">彰師大首頁</a>
-    <br><br>
+<br /><br />
 <a href="index.php">回首頁</a>
-    <br><br>
-<a href="http://www.ncue.edu.tw"><img src="img/schl_mark.png"></a>
-    <br><br>
+<br /><br />
+<a href="http://www.ncue.edu.tw"><img src="img/schl_mark.png" /></a>
+<br /><br />
 <a href="mailto:bob@cc.ncue.edu.tw">寄信給老師</a>
-    <br><br>
+<br /><br />
 
 <!-- target 屬性 -->
 <h2>target 屬性</h2>
 
-<a href='http://www.ncue.edu.tw' target="_blank">彰化師大首頁(_blank)</a>
-    <br><br>
-<a href='http://www.ncue.edu.tw' target="_top">彰化師大首頁(_top)</a>
-    <br><br>
-<a href='http://www.ncue.edu.tw' target="_self">彰化師大首頁(_self)</a>
-    <br><br>
-<a href='http://www.ncue.edu.tw' target="_parent">彰化師大首頁(_parent)</a>
-    <br><br>
-<a href='http://www.ncue.edu.tw' target="_blank"><img src="img/schl_mark.png"></a>
-    <br><br>
+<a href="http://www.ncue.edu.tw" target="_blank">彰化師大首頁(_blank)</a>
+<br /><br />
+<a href="http://www.ncue.edu.tw" target="_top">彰化師大首頁(_top)</a>
+<br /><br />
+<a href="http://www.ncue.edu.tw" target="_self">彰化師大首頁(_self)</a>
+<br /><br />
+
+<a href="http://www.ncue.edu.tw" target="_parent">彰化師大首頁(_parent)</a>
+<br /><br />
+<a href="http://www.ncue.edu.tw" target="_blank"
+  ><img src="img/schl_mark.png"
+/></a>
+<br /><br />
 
 <!-- id 屬性 -->
 <h2>id 屬性</h2>
 
 <style>
-img {
-display: block;
-margin: 30px;
-}
+  img {
+    display: block;
+    margin: 30px;
+  }
 </style>
 
-<a href="#photo2">移至圖片二</a>　　
-<button type="button" onclick="location.href='#photo3'">移至圖片三</button>　　
+<a href="#photo2">移至圖片二</a>
+<button type="button" onclick="location.href = '#photo3'">移至圖片三</button>
 
 <div id="photo1">
-    <b>圖片一：</b>
-        <img src="https://picsum.photos/200">
-        <img src="https://picsum.photos/200">
+  <b>圖片一：</b>
+  <img src="https://picsum.photos/200" />
+  <img src="https://picsum.photos/200" />
 </div>
 <div id="photo2">
-    <b>圖片二：</b>
-        <img src="https://picsum.photos/300">
-        <img src="https://picsum.photos/300">
+  <b>圖片二：</b>
+  <img src="https://picsum.photos/300" />
+  <img src="https://picsum.photos/300" />
 </div>
 <div id="photo3">
-    <b>圖片三：</b>
-        <img src="https://picsum.photos/400">
-        <img src="https://picsum.photos/400">
+  <b>圖片三：</b>
+  <img src="https://picsum.photos/400" />
+  <img src="https://picsum.photos/400" />
 </div>
 
-<br>
-    <a href="#photo1">移至圖片一</a>　　
-    <button type="button" onclick="location.href='#photo2'">移至圖片二</button>　　
-    <button type="button" onclick="location.href='#photo3'">移至圖片三</button>
-
+<br />
+<a href="#photo1">移至圖片一</a>　　
+<button type="button" onclick="location.href = '#photo2'">移至圖片二</button>
+<button type="button" onclick="location.href = '#photo3'">移至圖片三</button>
