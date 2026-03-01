@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: "Microsoft JhengHei", "PMingLiU", sans-serif;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        margin: 0;
+      }
+
+      .main-container {
+        width: 950px;
+        border: 1px solid #337ab7;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .panel-header {
+        background-color: #337ab7;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+      }
+
+      td {
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        font-size: 15px;
+        color: #333;
+        height: 35px;
+      }
+
+      .label-cell {
+        background-color: white;
+        width: 180px;
+        text-align: right;
+        padding-right: 30px;
+        font-weight: 500;
+      }
+
+      .input-cell {
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 350px;
+        padding: 7px 10px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .address-input {
+        width: 600px !important;
+      }
+
+      input::placeholder {
+        color: #bbb;
+      }
+
+      .radio-group {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding-left: 10px;
+      }
+
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .radio-group input {
+        margin-right: 10px;
+      }
+
+      .contract-box {
+        width: 680px;
+        height: 50px;
+        border: 1px solid #337ab7;
+        padding: 8px;
+        font-size: 14px;
+        color: #444;
+        line-height: 1.6;
+        resize: none;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+      }
+
+      .agree-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 120px;
+        margin-top: 5px;
+      }
+
+      .agree-wrapper input {
+        margin-right: 10px;
+      }
+
+      .footer-actions {
+        padding: 20px 0;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .btn {
+        padding: 8px 35px;
+        margin: 0 50px;
+        font-size: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        color: #fff;
+        transition: opacity 0.2s;
+      }
+
+      .btn-submit {
+        background-color: #2e5e8f;
+        border-color: #2e5e8f;
+      }
+
+      .btn-reset {
+        background-color: #eb951a;
+        border-color: #eb951a;
+      }
+
+      .btn:hover {
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="panel-header">會員資料填寫</div>
+
+      <form>
+        <table>
+          <tr>
+            <td class="label-cell"><b>帳號</b></td>
+            <td class="input-cell">
+              <input type="text" placeholder="限6-12個字" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>密碼</b></td>
+            <td class="input-cell">
+              <input type="password" placeholder="限6-12個字" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>密碼確認</b></td>
+            <td class="input-cell">
+              <input type="password" placeholder="請再次輸入密碼" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>姓名</b></td>
+            <td class="input-cell"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>性別</b></td>
+            <td class="input-cell">
+              <div class="radio-group">
+                <label><input type="radio" name="sex" /> 男性</label>
+                <label><input type="radio" name="sex" /> 女性</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>生日</b></td>
+            <td class="input-cell">
+              <input type="text" placeholder="例:1999/09/01" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>電話號碼</b></td>
+            <td class="input-cell"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>地址</b></td>
+            <td class="input-cell">
+              <input type="text" class="address-input" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>電子郵件</b></td>
+            <td class="input-cell"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>暱稱</b></td>
+            <td class="input-cell"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><b>同意會員合約</b></td>
+            <td class="input-cell">
+              <textarea class="contract-box" readonly>
+會員合約內容... 本文件所約定之內容外，並應同意並遵守該等已經公佈及將用規範、辦法、處理原則、政策、及相關服務說明等，均為會員合約的一部份；會員必須同意並遵守本文件所約定之內容外，並應同意並遵守該等已經公佈及將。
+菜菜 撈撈 這題好難寫 寫了傘小時了 QAQ
+</textarea>
+              <div class="agree-wrapper">
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="footer-actions">
+                  <input type="checkbox" /><b>我同意會員合約內容</b>
+        </div>
+        <div class="footer-actions">
+          <button type="submit" class="btn btn-submit">資料送出</button>
+          <button type="reset" class="btn btn-reset">重新填寫</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
