@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-TW">
+  <style>
+    .title {
+      font-size: 35px;
+      text-align: right;
+      margin-bottom: 20px;
+      width: 300px;
+    }
+    table tr {
+      height: 50px;
+    }
+    .table_title {
+      font-size: 18px;
+      text-align: right;
+      padding-right: 30px;
+      width: 300px;
+    }
+    .table_data {
+      font-size: 18px;
+      text-align: left;
+      padding-right: 30px;
+      width: 300px;
+    }
+    .table_data input {
+      width: 100%;
+      height: 25px;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 5px 10px 5px 10px;
+    }
+    .table_buttons {
+      padding-left: 20px;
+    }
+    .table_text {
+      font-size: 16px;
+      color: #444444;
+    }
+    .table_buttons input,
+    .table_buttons button {
+      width: 75px;
+      height: 35px;
+      background-color: #4179b7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .send-btn-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .send-btn-content span:first-child::after {
+      content: "";
+      display: inline-block;
+      width: 1.5em;
+    }
+  </style>
+
+  <body>
+    <div width="600px" style="margin: 0 auto">
+      <div class="title">會員註冊</div>
+    </div>
+    <form>
+      <table>
+        <tr>
+          <td class="table_title">帳號</td>
+          <td class="table_data">
+            <input type="text" name="account" placeholder="限4-10個字" />
+          </td>
+        </tr>
+        <tr>
+          <td class="table_title">密碼</td>
+          <td class="table_data">
+            <input type="password" name="password" placeholder="限6-12個字" />
+          </td>
+        </tr>
+        <tr>
+          <td class="table_title">密碼確認</td>
+          <td class="table_data">
+            <input type="password" name="confirm_password" />
+          </td>
+        </tr>
+        <tr>
+          <td class="table_title">E-mail</td>
+          <td class="table_data">
+            <input type="email" name="email" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <label>
+              <input type="checkbox" name="agree" />
+              <span class="table_text">我同意會員註冊條款</span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="table_buttons">
+            <label>
+              <button type="submit" name="push">
+                <span class="send-btn-content">
+                  <span>送</span><span>出</span>
+                </span>
+              </button>
+              <button type="reset" name="reset">
+                <span class="send-btn-content">
+                  <span>重</span><span>填</span>
+                </span>
+              </button>
+            </label>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
