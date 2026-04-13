@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- saved from url=(0065)https://webcourse.ncue.edu.tw/Web/JavaScript/practice_jquery.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bootstrap Example</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./Bootstrap Example_files/bootstrap.min.css" />
+    <script src="./Bootstrap Example_files/jquery.min.js.下載"></script>
+    <script src="./Bootstrap Example_files/bootstrap.min.js.下載"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#form1").validate({
+          submitHandler: function (form) {
+            alert("註冊成功！表單準備送出！");
+          },
+          rules: {
+            account: {
+              required: true,
+              minlength: 4,
+              maxlength: 10,
+            },
+            pwd: {
+              required: true,
+              minlength: 6,
+              maxlength: 12,
+            },
+            pwd2: {
+              required: true,
+              minlength: 6,
+              maxlength: 12,
+              equalTo: "#pwd",
+            },
+            email: {
+              required: true,
+              email: true,
+            },
+            agree: {
+              required: true,
+            },
+          },
+          messages: {
+            account: {
+              required: "帳號為必填欄位",
+              minlength: "帳號至少4個字",
+              maxlength: "帳號最多10個字",
+            },
+            pwd: {
+              required: "密碼為必填欄位",
+              minlength: "密碼至少6個字",
+              maxlength: "密碼最多12個字",
+            },
+            pwd2: {
+              required: "請再次輸入密碼",
+              minlength: "密碼至少6個字",
+              maxlength: "密碼最多12個字",
+              equalTo: "兩次輸入的密碼不一致",
+            },
+            email: {
+              required: "請輸入E-mail",
+              email: "請輸入正確的E-mail格式",
+            },
+            agree: {
+              required: "必填",
+            },
+          },
+        });
+      });
+    </script>
+    <style type="text/css">
+      .error {
+        color: red;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+          <h2>會員註冊</h2>
+          <form class="form-horizontal" role="form" id="form1">
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="account">帳號</label>
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="限4-10個字"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">密碼</label>
+              <div class="col-sm-8">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pwd"
+                  name="pwd"
+                  placeholder="限6-12個字"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">密碼確認</label>
+              <div class="col-sm-8">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pwd2"
+                  name="pwd2"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">E-mail</label>
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-8 col-sm-offset-4">
+                <div class="checkbox">
+                  <label>
+                    <input
+                      type="checkbox"
+                      id="agree"
+                      name="agree"
+                    />我同意相關服務條款
+                  </label>
+                  <label class="error" for="agree"></label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-7s col-sm-offset-5">
+                <label>
+                  <button type="submit" class="btn btn-primary">送　出</button>
+                  <button type="reset" class="btn btn-primary">重　填</button>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
