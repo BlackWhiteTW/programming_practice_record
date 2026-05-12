@@ -1,0 +1,5 @@
+1. SELECT stud_no, stud_name, stud_sex, stud_addr FROM students WHERE stud_name LIKE '%美%' AND stud_sex = 'F';
+2. SELECT stud_no, stud_name, stud_addr FROM students WHERE stud_addr IN ('台中市', '台中縣', '彰化縣') ORDER BY stud_no DESC;
+3. SELECT students.stud_addr, COUNT(DISTINCT students.stud_no) AS student_count FROM students JOIN study ON students.stud_no = study.stud_no GROUP BY students.stud_addr HAVING COUNT(DISTINCT students.stud_no) > 1;
+4. SELECT s.stud_no, s.stud_name, s.stud_sex, s.stud_addr FROM students s LEFT JOIN study st ON s.stud_no = st.stud_no GROUP BY s.stud_no, s.stud_name, s.stud_sex, s.stud_addr HAVING COUNT(st.serial_no) = 0;
+5. SELECT course.c_name, course.credit FROM students JOIN study ON students.stud_no = study.stud_no JOIN course ON study.serial_no = course.c_no WHERE students.stud_name = '張文傑';
