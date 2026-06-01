@@ -1,0 +1,3 @@
+Hello, World!
+This is a C++ Polymorphism test file.
+We are doing Homework 7.
