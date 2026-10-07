@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class C7_recursion {
+public class C7_2 {
 
     public static long f(int n) {
         if (n == 0) {
